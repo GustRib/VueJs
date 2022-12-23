@@ -4,11 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=" ./vue.js"></script>
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="app">
+        {{ mensagem }}<br>
+        Valor total: {{ valorTotal }}<br>
+        Logado: {{ logado }}<br>
+        Hobbie: {{ hobbies[2] }}<br>
+        Perfil: {{ perfil.nome }}, {{ perfil.cursos[1].nome }}
+    </div>
+    <script>
 
-    
+        const vm = new Vue ({
+            el: '#app', //#para selecionar por id | . para selecionar por class
+            data: { //variaveis/atributos reativos
+                mensagem: 'Primeiro template controlado pelo Vue',
+                valorTotal: 160.47, //numero
+                logado: true, //bolleano
+                hobbies: [
+                    'Dormir',
+                    'Jogar',
+                    'Programar'
+                ],
+                perfil: {
+                    nome: 'Gustavo V F Ribeiro',
+                    site: 'www.google.com',
+                    idade: '20 anos',
+                    cursos: [
+                        {
+                            nome: 'Laravel', cargaHoraria: '50 anos'
+                        },
+                        {
+                            nome: 'Banco de Dados Relacionais', cargaHoraria: '40 horas'
+                        }
+                    ]
+                }
+            }
+        }) //vm = ViewModel
+    </script>
 </body>
 </html>
