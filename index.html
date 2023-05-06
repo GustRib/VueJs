@@ -8,21 +8,19 @@
     <title>Portfólio</title>
     <style>
         .verde {
-            color:green
+            background-color:green
         }
 
-        .negrito {
-            font-weight: bold;
-        }
+    .azul {
+        background-color: blue;
+    }
 
     </style>    
 </head>
 <body>
     <div id="app">
-        <a :href="site">Site</a>
-        <p class="negrito" :class="cor">Entendendo a diretiva v-bind</p>
-        <input type="text" :placeholder="InstrucaoDePreenchimento" :value="valor">
-        <input type="checkbox" :checked="check">
+        {{ mensagem.substr(0,3) }}
+        <input :value="2 + 2" :class="teste ? 'verde' : estilo">
     </div>
 
     <script>
@@ -30,11 +28,9 @@
         const vm = new Vue ({
             el: '#app', //#para selecionar por id | . para selecionar por class
             data: {
-                site: 'https://www.google.com.br',
-                cor: 'verde',
-                InstrucaoDePreenchimento: 'Placeholder - Diretiva v-bind',
-                valor: 'Entendendo a diretiva v-bind',
-                check: true
+                mensagem: 'Expressao',
+                estilo: 'azul',
+                teste: false 
             },
             methods: {}
         }) 
