@@ -10,14 +10,19 @@
         .verde {
             color:green
         }
+
+        .negrito {
+            font-weight: bold;
+        }
+
     </style>    
 </head>
 <body>
     <div id="app">
-        <a v-bind:href="site">Site</a>
-        <p v-bind:class="cor">Entendendo a diretiva v-bind</p>
-        <input type="text" v-bind:placeholder="InstrucaoDePreenchimento" v=bind:value="valor">
-        <input type="checkbox" v-bind:checked="check">
+        <a :href="site">Site</a>
+        <p class="negrito" :class="cor">Entendendo a diretiva v-bind</p>
+        <input type="text" :placeholder="InstrucaoDePreenchimento" :value="valor">
+        <input type="checkbox" :checked="check">
     </div>
 
     <script>
@@ -25,7 +30,7 @@
         const vm = new Vue ({
             el: '#app', //#para selecionar por id | . para selecionar por class
             data: {
-                site: 'https://steam.com.br',
+                site: 'https://www.google.com.br',
                 cor: 'verde',
                 InstrucaoDePreenchimento: 'Placeholder - Diretiva v-bind',
                 valor: 'Entendendo a diretiva v-bind',
