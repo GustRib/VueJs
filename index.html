@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" @keyup="imprimirTexto()">
+        <input type="text" @keyup="imprimirTexto('Enviando parametro', 5)">
         <button @click="mensagemAlerta()">Botão</button>
     </div>
 
@@ -27,10 +27,14 @@
         //vm = ViewModel
         const vm = new Vue ({
             el: '#app', //#para selecionar por id | . para selecionar por class
-            data: {},
+            data: {
+                xyz: true
+            },
             methods: {
-                imprimirTexto() {
-                    console.log('Teste')
+                imprimirTexto(t, n, x) {
+                    console.log(t)
+                    console.log(n)
+                    console.log(this.xyz)
                 },
                 mensagemAlerta() {
                     alert('Mensagem de alerta')
