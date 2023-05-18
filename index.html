@@ -25,8 +25,7 @@
         <p v-if="idade < 18">Menor de idade<a><span></span></a></p>
         <p v-else>Maior de idade</p>
         <hr>
-
-
+        
         <!-- v-if, v-else-if, v-else -->
         Nota: <input type="text" id="inputNota" @blur="setNota()">
         <p v-if="nota == ''">Digite a nota do aluno</p>
@@ -49,9 +48,12 @@
             methods: {
                 setIdade() {
                     this.idade = inputIdade.value
+                },
+                setNota() {
                     this.nota = inputNota.value
                     console.log(this.nota)
                 }
+                
             }
         }) 
     </script>
