@@ -12,11 +12,7 @@
 </head>
 <body>
     <div id="app">
-        <p @mouseover="exibirTextoAjuda = true" @mouseout="exibirTextoAjuda = false">Exemplo tolltip</p>
-        <div v-show="exibirTextoAjuda">
-            <h3>Titulo texto ajuda</h3>
-            <p>Contendo texto ajuda</p>
-        </div>
+        <div v-html="elementosHTML"></div>
     </div>
 
     <script>
@@ -24,7 +20,7 @@
         const vm = new Vue ({
             el: '#app', //#para selecionar por id | . para selecionar por class
             data: {
-                exibirTextoAjuda: false
+                elementosHTML: '<p><b>Site</b></p><a href="https://www.google.com">Pesquisa do Google</a>'
             },
             methods: {}
         }) 
